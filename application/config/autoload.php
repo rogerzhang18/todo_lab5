@@ -58,8 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('parser');
-
+$autoload['libraries'] = array('parser', 'parsedown');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers

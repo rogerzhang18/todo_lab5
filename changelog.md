@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.0.5] - 2018-02-15
+### Added
+ - jobs.md markup file for jobs
+ - Parsedown.php library from github
+ - Helpme.php controller for handling text from parsedown
+
+### Changed
+ - Redirects from "Help Wanted" navbar item to Help me page
+
+
 ## [0.0.4] - 2018-02-15
 ### Added
  - itemlist table view for maintenance
