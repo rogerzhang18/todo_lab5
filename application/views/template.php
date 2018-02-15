@@ -20,7 +20,7 @@
                 {content}
             </div>
             <div id="footer" class="span12">
-                Copyright &copy; 2018,  <a href="mailto:someone@somewhere.com">Me</a>.
+                Copyright &copy; 2018,  <a href="mailto:Aplus@gmail.com">Aplus Academy</a>.
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
