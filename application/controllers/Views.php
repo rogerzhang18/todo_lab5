@@ -2,9 +2,17 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+ * Views class
+ *  -Controls the views that show tasks in ordered list
+ *  -Loads from the Tasks model
+ */
 class Views extends Application
 {
-
+    /*
+     * Index page for this controller
+     * Loads leftside with priority list and rightside with category list.
+     */
     public function index()
     {
         $this->data['pagetitle'] = 'Ordered TODO List';
@@ -16,6 +24,9 @@ class Views extends Application
         $this->render('template_secondary'); 
     }
 
+    /*
+     * Creates the tasks list sorted by priority.
+     */
     function makePrioritizedPanel($tasks)
     {
     	// extract the undone tasks
@@ -40,6 +51,9 @@ class Views extends Application
     	return $this->parser->parse('by_priority', $parms, true);
 	}
 
+    /*
+     * Gets the tasks list sorted by categories from the Tasks model.
+     */
 	function makeCategorizedPanel($tasks)
 	{
 	    $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];

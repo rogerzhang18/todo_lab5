@@ -5,11 +5,17 @@
  */
 class Tasks extends CSV_Model {
 
+	/*
+	 * Constructor for Tasks CSV model class.
+	 */
     public function __construct()
     {
             parent::__construct(APPPATH . '../data/tasks.csv', 'id');
     }
 
+    /*
+     * Gets a sorted tasks list by categories.
+     */
     function getCategorizedTasks()
 	{
 	    // extract the undone tasks
