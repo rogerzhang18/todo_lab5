@@ -103,9 +103,13 @@ class Mtce extends Application {
         if ( ! isset($this->data['error']))
             $this->data['error'] = '';
 
+        // fill fields with data from model App.php
         $fields = array(
             'ftask'      => form_label('Task description') . form_input('task', $task->task),
             'fpriority'  => form_label('Priority') . form_dropdown('priority', $this->app->priority(), $task->priority),
+            'fsize'  => form_label('Priority') . form_dropdown('size', $this->app->size(), $task->size),
+            'fgroup'  => form_label('Group') . form_dropdown('group', $this->app->group(), $task->group),
+            'fstatus'  => form_label('Status') . form_dropdown('status', $this->app->status(), $task->status),
             'zsubmit'    => form_submit('submit', 'Update the TODO task'),
         );
         $this->data = array_merge($this->data, $fields);
