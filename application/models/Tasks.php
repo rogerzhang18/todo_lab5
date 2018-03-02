@@ -19,6 +19,7 @@ class Tasks extends CSV_Model {
     function getCategorizedTasks()
 	{
 	    // extract the undone tasks
+		$undone = array();
 	    foreach ($this->all() as $task)
 	    {
 	        if ($task->status != 2)
@@ -30,13 +31,27 @@ class Tasks extends CSV_Model {
 	        $task->group = $this->app->group($task->group);
 
 	    // order them by category
+	    if (count( $undone ) != 0)
 	    usort($undone, "orderByCategory");
 
 	    // convert the array of task objects into an array of associative objects       
+		$converted = array();
 	    foreach ($undone as $task)
 	        $converted[] = (array) $task;
 
 		return $converted;
+	}
+
+	// provide form validation rules
+	public function rules()
+	{
+	    $config = array(
+	        ['field' => 'task', 'label' => 'TODO task', 'rules' => 'alpha_numeric_spaces|max_length[64]'],
+	        ['field' => 'priority', 'label' => 'Priority', 'rules' => 'integer|less_than[4]'],
+	        ['field' => 'size', 'label' => 'Task size', 'rules' => 'integer|less_than[4]'],
+	        ['field' => 'group', 'label' => 'Task group', 'rules' => 'integer|less_than[5]'],
+	    );
+	    return $config;
 	}
 
 }
