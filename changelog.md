@@ -8,6 +8,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.0.10] - 2018-03-01
+### Added
+ - itemedit view to display form for editing maintanence task list
+
+### Changed
+ - Added methods in mtce controller for handling editing tasks
+ - Modified App model to fix undefined index PHP error
+ - Changelog
+
 ## [0.0.9] - 2018-03-01
 ### Added
  - oneitemx to link item to the list
