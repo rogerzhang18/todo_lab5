@@ -30,20 +30,22 @@ class Views extends Application
     function makePrioritizedPanel($tasks)
     {
     	// extract the undone tasks
-	    foreach ($tasks as $task)
-	    {
-	        if ($task->status != 2)
-	            $undone[] = $task;
-	    }
+        $undone = array();
+        foreach ($tasks as $task)
+        {
+            if ($task->status != 2)
+                $undone[] = $task;
+        }
+        // order them by priority
+        if (count($undone) != 0)
+            usort($undone, "orderByPriority");
+        
+        // substitute the priority name
+        foreach ($undone as $task)
+            $task->priority = $this->app->priority($task->priority);
 
-	    // order them by priority
-		usort($undone, "orderByPriority");
-    	
-    	// substitute the priority name
-		foreach ($undone as $task)
-    		$task->priority = $this->app->priority($task->priority);
-
-    	// convert the array of task objects into an array of associative objects       
+        // convert the array of task objects into an array of associative objects       
+        $converted = array();
 		foreach ($undone as $task)
     		$converted[] = (array) $task;
 

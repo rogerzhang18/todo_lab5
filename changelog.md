@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - mildly changed the way fields on Maintenance page displays; the default way clusters everything on 1 line which looks bad  
+- Fixed crash on Work page that would occur if you were working with an empty list (all tasks completed) because View.php & Task.php did not check if array was empty before calling array item members
 
 ## [0.0.10] - 2018-03-01
 ### Added
