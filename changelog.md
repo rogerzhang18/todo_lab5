@@ -8,6 +8,58 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.0.11] - 2018-03-01
+### Added
+- fields to Maintenance page while in Owner mode to set size, group, and status of tasks  
+
+### Changed
+- mildly changed the way fields on Maintenance page displays; the default way clusters everything on 1 line which looks bad  
+- Fixed crash on Work page that would occur if you were working with an empty list (all tasks completed) because View.php & Task.php did not check if array was empty before calling array item members
+
+## [0.0.10] - 2018-03-01
+### Added
+ - itemedit view to display form for editing maintanence task list
+
+### Changed
+ - Added methods in mtce controller for handling editing tasks
+ - Modified App model to fix undefined index PHP error
+ - Changelog
+
+## [0.0.9] - 2018-03-01
+### Added
+ - oneitemx to link item to the list
+ - itemadd button to add a new todo job for owners
+
+### Changed
+ - mtce controller so the owners has the ability to add jobs
+ - Changelog
+
+## [0.0.8] - 2018-03-01
+### Changed
+ - Tasks by priority list is in a form now
+ - Added checkboxes to indicate completed tasks
+ - Added owner privilege to complete a task
+ - Added a complete() function in Views controller to handle completer action
+
+## [0.0.7] - 2018-03-01
+### Added
+ - Simple User Roles
+ - Set Role under User Role at top of page
+ - Role will be displayed atop Maintenance page
+
+### Changed
+ - .gitignore now ignores temp folder
+
+## [0.0.6] - 2018-03-01
+### Added
+ - Page navigation
+ - Each page will now show 10 tasks for maintenance
+ - itemnav view to view the itemlist
+
+### Changed
+ - itemlist view to properly display pages
+ - updated Changelog
+
 ## [0.0.5] - 2018-02-15
 ### Added
  - jobs.md markup file for jobs
