@@ -32,7 +32,7 @@ class Tasks extends CSV_Model {
 
 	    // order them by category
 	    if (count( $undone ) != 0)
-	    usort($undone, "orderByCategory");
+	    	usort($undone, "orderByCategory");
 
 	    // convert the array of task objects into an array of associative objects       
 		$converted = array();
