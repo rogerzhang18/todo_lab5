@@ -5,6 +5,7 @@
  */
 class Entity extends CI_Model {
 
+    // magic setter
     // If this class has a setProp method, use it, else modify the property directly
     public function __set($key, $value) {
         // if a set* method exists for this key, 
@@ -24,5 +25,10 @@ class Entity extends CI_Model {
         $this->$key = $value;
         
         return $this;
+    }
+
+    // magic getter
+    public function __get($key) {
+        return $this->$key;
     }
 }
