@@ -6,6 +6,6 @@ class Fruitbowl extends Memory_Model {
         if ($this->size() >= 6)
             throw new Exception('The fruit bowl is full');
         else
-        	$this->add($record);
+        	parent::add($record);
     }
 }
