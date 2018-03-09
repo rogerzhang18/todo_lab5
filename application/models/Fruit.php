@@ -1,6 +1,6 @@
 <?php
 
-public class Fruit extends Entity {
+class Fruit extends Entity {
 	protected $id;
 	protected $name;
 	protected $color;
