@@ -15,13 +15,14 @@ class TaskTest extends TestCase
 	{
 		// Load CI instance normally
 		$this->CI = &get_instance();
+		$this->CI->load->model("task");
 		$this->task = new Task();
 	}
 	public function testAcceptValidValues()
 	{
 		try 
 		{
-			$this->task->taskName =	"test task";
+			$this->task->taskName =	"testtask1";
 			$this->task->priority =	1;
 			$this->task->size =	4;
 			$this->task->group = 5;
@@ -30,7 +31,7 @@ class TaskTest extends TestCase
 		{
 			$this->fail("valid input not accepted:".$e);
 		}
-		$this->assertEquals($this->task->taskName, "test task");
+		$this->assertEquals($this->task->taskName, "testtask1");
 		$this->assertEquals($this->task->priority,	1);
 		$this->assertEquals($this->task->size,	4);
 		$this->assertEquals($this->task->group, 5);
@@ -38,6 +39,7 @@ class TaskTest extends TestCase
 
 	public function testRejectInvalidValues()
 	{
+	    $this->expectException(Exception::class);
 		$this->task->taskName = "invalid task name.+-*/";
 	    $this->expectException(Exception::class);
 		$this->task->priority = 5;
@@ -45,7 +47,8 @@ class TaskTest extends TestCase
 		$this->task->size =	5;
 	    $this->expectException(Exception::class);
 		$this->task->group = 6;
-	    $this->expectException(Exception::class);
 	}
 
 }
+// for future use
+// fwrite(STDERR, print_r($this->task->group, TRUE));
