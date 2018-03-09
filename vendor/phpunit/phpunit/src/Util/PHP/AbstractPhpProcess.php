@@ -185,6 +185,7 @@ abstract class AbstractPhpProcess
      * @param Test       $test
      * @param TestResult $result
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function runTestJob($job, Test $test, TestResult $result): void
@@ -272,6 +273,7 @@ abstract class AbstractPhpProcess
      * @param string     $stderr
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      */
     private function processChildResult(Test $test, TestResult $result, $stdout, $stderr): void
     {

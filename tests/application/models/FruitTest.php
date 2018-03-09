@@ -4,23 +4,25 @@ use PHPUnit\Framework\TestCase;
 
 class FruitTest extends TestCase
 {
-	function setUp()
-	{
-		$this->CI = &get_instance();
-		$this->CI->load->model('fruit');
-		$this->item = new Fruit();
-		$this->item->id = 1;
-		$this->item->name = 'Banana';
-		$this->item->color = 'yellow';
-		$this->item->weight = 100;
-	}
+    // Initial setup
+    function setUp()
+    {
+            $this->CI = &get_instance();
+            $this->CI->load->model('fruit');
+            $this->item = new Fruit();
+            $this->item->id = 1;
+            $this->item->name = 'Banana';
+            $this->item->color = 'yellow';
+            $this->item->weight = 100;
+    }
 
-	function testSetup()
-	{
-		$this->assertEquals(1, $this->item->id);
-		$this->assertEquals('Banana', $this->item->name);
-		$this->assertEquals('yellow', $this->item->color);
-		$this->assertEquals(100, $this->item->weight);
+    // test setup for id, name, color and weight
+    function testSetup()
+    {
+            $this->assertEquals(1, $this->item->id);
+            $this->assertEquals('Banana', $this->item->name);
+            $this->assertEquals('yellow', $this->item->color);
+            $this->assertEquals(100, $this->item->weight);
     }
 
     function testValidId()

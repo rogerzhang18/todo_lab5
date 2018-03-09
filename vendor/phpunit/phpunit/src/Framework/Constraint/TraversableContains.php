@@ -51,6 +51,7 @@ class TraversableContains extends Constraint
     /**
      * Returns a string representation of the constraint.
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      *
      * @return string
@@ -111,6 +112,7 @@ class TraversableContains extends Constraint
      *
      * @param mixed $other evaluated value or object
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      *
      * @return string

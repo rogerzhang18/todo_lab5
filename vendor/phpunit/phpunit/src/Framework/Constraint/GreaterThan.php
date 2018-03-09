@@ -33,6 +33,7 @@ class GreaterThan extends Constraint
     /**
      * Returns a string representation of the constraint.
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      *
      * @return string
