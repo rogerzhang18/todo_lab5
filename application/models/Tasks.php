@@ -54,6 +54,17 @@ class Tasks extends CSV_Model {
 	    return $config;
 	}
 
+	public function getTasksByStatus($stat)
+	{
+		$tasksList = array();
+	    foreach ($this->all() as $task)
+	    {
+	        if ($task->status == $stat)
+	            $tasksList[] = $task;
+	    }
+	    return $tasksList;
+	}
+
 }
 
 // return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
