@@ -105,6 +105,7 @@ class PhptTestCase implements Test, SelfDescribing
      * @throws \SebastianBergmann\CodeCoverage\RuntimeException
      * @throws \SebastianBergmann\CodeCoverage\UnintentionallyCoveredCodeException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return TestResult
      */
@@ -314,6 +315,7 @@ class PhptTestCase implements Test, SelfDescribing
      * @param array      $settings
      *
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return bool
      */

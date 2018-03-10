@@ -20,6 +20,7 @@ class JsonMatchesErrorMessageProviderTest extends TestCase
      * @param mixed $expected
      * @param mixed $type
      *
+     * @throws \Exception
      * @throws \PHPUnit\Framework\ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
@@ -38,6 +39,7 @@ class JsonMatchesErrorMessageProviderTest extends TestCase
      * @param mixed $error
      * @param mixed $prefix
      *
+     * @throws \Exception
      * @throws \PHPUnit\Framework\ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */

@@ -401,6 +401,7 @@ class TestResult implements Countable
      * @param Test  $test
      * @param float $time
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function endTest(Test $test, $time): void
@@ -614,6 +615,7 @@ class TestResult implements Countable
      * @throws OriginalCoveredCodeNotExecutedException
      * @throws OriginalMissingCoversAnnotationException
      * @throws UnintentionallyCoveredCodeException
+     * @throws \Exception
      * @throws \ReflectionException
      * @throws \SebastianBergmann\CodeCoverage\InvalidArgumentException
      * @throws \SebastianBergmann\CodeCoverage\RuntimeException

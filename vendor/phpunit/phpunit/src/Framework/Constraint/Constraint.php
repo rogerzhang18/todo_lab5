@@ -44,6 +44,7 @@ abstract class Constraint implements Countable, SelfDescribing
      *
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return mixed
      */
@@ -97,6 +98,7 @@ abstract class Constraint implements Countable, SelfDescribing
      * @param ComparisonFailure $comparisonFailure
      *
      * @throws ExpectationFailedException
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     protected function fail($other, $description, ComparisonFailure $comparisonFailure = null): void
@@ -148,6 +150,7 @@ abstract class Constraint implements Countable, SelfDescribing
      *
      * @param mixed $other evaluated value or object
      *
+     * @throws \Exception
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      *
      * @return string

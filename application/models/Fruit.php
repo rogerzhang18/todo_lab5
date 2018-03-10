@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * Basis entity model for fruitbowl
+ *      This is the basic entity fruit class that checks
+ *          -Contains ID check
+ *          -Name must be present and no less than 30 characters
+ *          -Color must be of type yellow, red or green
+ *          -Weight must be a positive number and less than 1000 grams.
+ */
 class Fruit extends Entity {
 	protected $id;
 	protected $name;

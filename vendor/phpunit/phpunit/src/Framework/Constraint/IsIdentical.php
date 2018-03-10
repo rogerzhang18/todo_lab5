@@ -61,6 +61,7 @@ class IsIdentical extends Constraint
      *
      * @throws ExpectationFailedException
      * @throws SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return mixed
      */
@@ -109,6 +110,7 @@ class IsIdentical extends Constraint
      * Returns a string representation of the constraint.
      *
      * @throws SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return string
      */
@@ -131,6 +133,7 @@ class IsIdentical extends Constraint
      * @param mixed $other evaluated value or object
      *
      * @throws SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \Exception
      *
      * @return string
      */
