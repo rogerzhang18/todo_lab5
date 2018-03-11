@@ -4,7 +4,8 @@
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
-!tmp/*
+tmp/*
+tests/testResults/*
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
@@ -15,6 +16,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
 /nbproject/private/
 /nbproject/
+composer.lock

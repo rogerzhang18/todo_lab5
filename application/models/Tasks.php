@@ -10,7 +10,7 @@ class Tasks extends CSV_Model {
 	 */
     public function __construct()
     {
-            parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+		parent::__construct(APPPATH . '../data/tasks.csv', 'id');
     }
 
     /*
@@ -32,7 +32,7 @@ class Tasks extends CSV_Model {
 
 	    // order them by category
 	    if (count( $undone ) != 0)
-	    usort($undone, "orderByCategory");
+	    	usort($undone, "orderByCategory");
 
 	    // convert the array of task objects into an array of associative objects       
 		$converted = array();
@@ -52,6 +52,17 @@ class Tasks extends CSV_Model {
 	        ['field' => 'group', 'label' => 'Task group', 'rules' => 'integer|less_than[5]'],
 	    );
 	    return $config;
+	}
+
+	public function getTasksByStatus($stat)
+	{
+		$tasksList = array();
+	    foreach ($this->all() as $task)
+	    {
+	        if ($task->status == $stat)
+	            $tasksList[] = $task;
+	    }
+	    return $tasksList;
 	}
 
 }

@@ -8,6 +8,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.0.15] - 2018-03-09
+### Added
+- Comments for each file for lab 10
+- Function descriptions
+
+### Fixed
+- Bad exception description
+- Unit test function bad checks for Task.php
+
+### Updated
+- Changelog
+
+## [0.0.14] - 2018-03-08
+### Changed
+- TaskTest now pass, nothing wrong with Task.php I just wasn't using PHPUnit correctly before
+
+## [0.0.13] - 2018-03-08
+### Changed
+- updated TaskListTest to test for case if incomplete tasks are more than complete tasks
+
+## [0.0.12] - 2018-03-08
+### Added
+- unit tests with PHPUnit
+
 ## [0.0.11] - 2018-03-01
 ### Added
 - fields to Maintenance page while in Owner mode to set size, group, and status of tasks  
