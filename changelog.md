@@ -8,6 +8,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.0.17] - 2018-03-22
+### Changed
+- No longer overrides store & load
+- Now uses stdClass instead of taskClass in xml 
+
+## [0.0.16] - 2018-03-22
+### Added
+- Override function for load and store for XML_Model
+- tasks.xml -> 7 tasks added similar to tasks.csv
+- comments and finalized the project
+
+### Changed
+- Tasks php to load the xml instead of the csv
+- changelog 
+
 ## [0.0.15] - 2018-03-09
 ### Added
 - Comments for each file for lab 10
