@@ -3,16 +3,59 @@
 /* 
  * This is a new task model that defines the data path from the data folder
  */
-class Tasks extends CSV_Model {
+class Tasks extends XML_Model {
 
 	/*
 	 * Constructor for Tasks CSV model class.
 	 */
     public function __construct()
     {
-		parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+        // Changed the path to load the task xml
+        parent::__construct(APPPATH . '../data/tasks.xml', 'id');
     }
 
+        // Override load function for the xml format
+        protected function load()
+	{
+            // loads the xml
+            if (($handle = simplexml_load_file($this->_origin)) !== FALSE)
+            {
+                $first = true;
+                foreach ($handle -> children() as $xRecord) {
+                    $record = new $this -> _entity();
+                    foreach ($xRecord -> children() as $value) {
+                        if ($first)
+                        {
+                            $this->_fields = array_keys((array)$xRecord);
+                            $first = false;
+                        }
+                        $this->_fields;
+                        $record -> {$value -> getName ()} = (string) $value;
+                        $this -> _data[$record -> { $this ->_keyfield } ] = $record;
+                    }
+                }
+            }
+            // rebuild the keys table
+            $this->reindex();
+	}
+
+        // Overrided this function to store the state condition properly
+	protected function store()
+	{
+            // rebuild the keys table
+            $this->reindex();
+            
+            // define a new simpleXML
+            $rootName = $this->_entity . 's';
+            $document = new SimpleXMLElement("<$rootName></$rootName>");;
+		foreach ($this -> _data as $records) {
+                    $item = $document->addChild ($this->_entity);
+                    foreach (array_keys((array) $records) as $value) {
+                        $element = $item->addChild ($value, $records -> $value);
+                    }
+                    $document->asXML($this->_origin);
+                }
+        }
     /*
      * Gets a sorted tasks list by categories.
      */
